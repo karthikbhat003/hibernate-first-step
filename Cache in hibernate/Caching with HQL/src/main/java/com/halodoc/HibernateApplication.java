@@ -22,6 +22,8 @@ import com.halodoc.domain.Alien;
 public class HibernateApplication {
     public static void main(String[] args) {
 
+        System.out.println("Starting with cache");
+
         Configuration con = new Configuration().configure().addAnnotatedClass(Alien.class);
         ServiceRegistry reg = new ServiceRegistryBuilder().applySettings(con.getProperties()).buildServiceRegistry();
         SessionFactory sf = con.buildSessionFactory(reg);
